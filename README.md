@@ -33,11 +33,11 @@ By combining real-time speech recognition, advanced language modeling, and natur
 The application follows a cyclical data flow to enable real-time interaction:
 
 ```mermaid
-graph TD
-    User[User (Child)] -->|Voice Input| Mic[Microphone Stream]
+flowchart TD
+    User[User Child] -->|Voice Input| Mic[Microphone Stream]
     Mic -->|Audio Stream| AAI[AssemblyAI]
     AAI -->|Real-time Transcription| Text[Text Input]
-    Text -->|Prompt + Context| GPT[OpenAI GPT-3.5]
+    Text -->|Prompt and Context| GPT[OpenAI GPT-3.5]
     GPT -->|AI Response Text| EL[ElevenLabs]
     EL -->|Synthesized Audio| Speaker[Speaker Output]
     Speaker --> User
